@@ -59,6 +59,7 @@ double Math::min(double arr[], int n){
     }
     return t_min;
 }
+
 double Math::pow(double x, int n){
     if(n== 0){
 
@@ -66,6 +67,7 @@ double Math::pow(double x, int n){
     }
     return x* pow(x, n- 1);
 }
+
 double Math::avg(double a, double b){
 
     return (a+ b)/ 2;
