@@ -349,7 +349,8 @@ class DateTime{
         Time time;
     
     public:
-
+        int toDays(DateTime& dttm);
+        
         DateTime()
         :   year(int()),
             month(int()),
@@ -581,7 +582,7 @@ class DateTime{
             int sum= 0;
             for(int i= 1; i< this->month; i++){
 
-                sum+= MonthDate(this->year, this->month);
+                sum+= MonthDate(this->year, i);
             }
             sum+= this->date;
             return sum;
@@ -827,12 +828,12 @@ class DateTime{
                 this->date--;
                 this->setHour(this->getHour()+ 24);
             }
-            while(this->date< 0){
+            while(this->date<= 0){
 
                 this->month--;
                 this->date+= MonthDate(this->year, this->month+ 1);
             }
-            while(this->month< 0){
+            while(this->month<= 0){
 
                 this->year--;
                 this->month+= 12;
